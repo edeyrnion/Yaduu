@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-
-[System.Serializable] public class EventGameState : UnityEvent<GameManager.GameState, GameManager.GameState> { }
 
 public class GameManager : Singleton<GameManager>
 {
@@ -15,7 +12,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public GameObject[] SystemPrefabs; // Prefabs the Gamemanager might need to keep trake off
-    public EventGameState OnGameStateChanged;
+    public Events.EventGameState OnGameStateChanged;
 
     private List<GameObject> _instancedSystemPrefabs; // List of Prefabs after they have been created
     private List<AsyncOperation> _loadOperations; // List of Scenes beeing loaded
@@ -37,6 +34,8 @@ public class GameManager : Singleton<GameManager>
         _loadOperations = new List<AsyncOperation>();
 
         InstantiateSystemPrefabs();
+
+        UIManager.Instance.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
     }
 
     private void Update()
@@ -70,6 +69,14 @@ public class GameManager : Singleton<GameManager>
     void OnUnloadOperationComplete(AsyncOperation ao)
     {
         Debug.Log("Unload Complete.");
+    }
+
+    void HandleMainMenuFadeComplete(bool fadeOut)
+    {
+        if (!fadeOut)
+        {
+            UnLoadLevel(_currentLevelName);
+        }
     }
 
     void UpdateState(GameState state)
@@ -151,5 +158,15 @@ public class GameManager : Singleton<GameManager>
     public void TogglePause()
     {
         UpdateState(_currentGameState == GameState.RUNNING ? GameState.PAUSED : GameState.RUNNING);
+    }
+
+    public void RestartGame()
+    {
+        UpdateState(GameState.PREGAME);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -330,6 +330,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
+  - {fileID: 7400000, guid: af5d964feb87dcd49a040f93b5e3a220, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -569,6 +570,11 @@ MonoBehaviour:
   _mainMenu: {fileID: 114901317790153168}
   _pauseMenu: {fileID: 114061906143354648}
   _dummyCamera: {fileID: 20757272912230474}
+  OnMainMenuFadeComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Events+EventFadeComplete, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114498863683258930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -849,6 +855,11 @@ MonoBehaviour:
   _mainMenuAnimator: {fileID: 111958717725990638}
   _fadeOutAnimation: {fileID: 7400000, guid: cd3a7154a27cac349b264a32093d18f0, type: 2}
   _fadeInAnimation: {fileID: 7400000, guid: af5d964feb87dcd49a040f93b5e3a220, type: 2}
+  OnMainMenuFadeComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Events+EventFadeComplete, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114982223430797344
 MonoBehaviour:
   m_ObjectHideFlags: 1
