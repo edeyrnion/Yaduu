@@ -16,10 +16,10 @@ public class GameManager : Singleton<GameManager>
 
     private List<GameObject> _instancedSystemPrefabs; // List of Prefabs after they have been created
     private List<AsyncOperation> _loadOperations; // List of Scenes beeing loaded
-    GameState _currentGameState = GameState.PREGAME;
 
     private string _currentLevelName = string.Empty;
 
+    private GameState _currentGameState = GameState.PREGAME;
     public GameState CurrentGameState
     {
         get { return _currentGameState; }
