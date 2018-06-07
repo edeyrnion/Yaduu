@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        transform.position = player.transform.position;
     }
 
     private void LateUpdate()

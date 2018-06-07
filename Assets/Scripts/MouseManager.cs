@@ -56,7 +56,7 @@ public class MouseManager : Singleton<MouseManager>
                     }
                     _layerHit = layer;
 
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButton(0))
                     {
                         OnClickEnvironment.Invoke(_hit.point, _layerHit);
                     }
