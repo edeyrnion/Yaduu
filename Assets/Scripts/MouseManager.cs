@@ -3,11 +3,11 @@
 public class MouseManager : Singleton<MouseManager>
 {
     [SerializeField] private Texture2D _pointerCurser = null;
-    [SerializeField] Vector2 _pointerCurserHotspot = new Vector2(32, 3);
+    [SerializeField] private Vector2 _pointerCurserHotspot = new Vector2(32, 3);
     [SerializeField] private Texture2D _walkCurser = null;
-    [SerializeField] Vector2 _walkCurserHotspot = new Vector2(0, 0);
+    [SerializeField] private Vector2 _walkCurserHotspot = new Vector2(0, 0);
     [SerializeField] private Texture2D _targetCurser = null;
-    [SerializeField] Vector2 _targetCurserHotspot = new Vector2(0, 0);
+    [SerializeField] private Vector2 _targetCurserHotspot = new Vector2(0, 0);
 
     public Layer[] LayerPriorities =
 {
@@ -38,7 +38,7 @@ public class MouseManager : Singleton<MouseManager>
         Cursor.SetCursor(_pointerCurser, _pointerCurserHotspot, CursorMode.Auto);
     }
 
-    void Update()
+    private void Update()
     {
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING)
         {

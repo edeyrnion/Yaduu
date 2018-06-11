@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     Animator _animator;
     NavMeshAgent _navMeshAgent;

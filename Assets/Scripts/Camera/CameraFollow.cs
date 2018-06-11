@@ -3,20 +3,20 @@
 public class CameraFollow : MonoBehaviour
 {
 
-    [SerializeField] GameObject player;
+    [SerializeField] Transform _player;
 
     private void Start()
     {
-        if (player == null)
+        if (_player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            _player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        transform.position = player.transform.position;
+        transform.position = _player.position;
     }
 
     private void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, player.transform.position, Time.deltaTime * 5);
+        transform.position = Vector3.Lerp(transform.position, _player.transform.position, Time.deltaTime * 5);
         return;
     }
 }
