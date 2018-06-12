@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        MouseManager.Instance.OnClickEnvironment.AddListener(HandleClickEnvironment);
+        MouseManager.Instance.OnLeftClick.AddListener(HandleClickEnvironment);
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
     }

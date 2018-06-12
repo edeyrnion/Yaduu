@@ -9,12 +9,16 @@ public class MouseManager : Singleton<MouseManager>
     [SerializeField] private Texture2D _targetCurser = null;
     [SerializeField] private Vector2 _targetCurserHotspot = new Vector2(0, 0);
 
+    private float _timeSinceMouseDownStart;
+    private float _mouseDownInterval = 0.1f;
+
     public Layer[] LayerPriorities =
 {
         Layer.Enemy,
         Layer.Walkable
     };
 
+    private bool _layerGotHit;
     private float _distanceToBackground = 50f;
     private Camera _viewCamera;
 
@@ -30,7 +34,10 @@ public class MouseManager : Singleton<MouseManager>
         get { return _layerHit; }
     }
 
-    public Events.EventOnClick OnClickEnvironment;
+    public Events.EventOnClick OnLeftClick;
+    public Events.EventOnClick OnRightClick;
+    public Events.EventOnClick OnScrollWheelClick;
+    public Events.EventOnScroll OnScrollWheel;
 
     private void Start()
     {
@@ -56,22 +63,55 @@ public class MouseManager : Singleton<MouseManager>
                     }
                     _layerHit = layer;
 
-                    if (Input.GetMouseButton(0))
-                    {
-                        OnClickEnvironment.Invoke(_hit.point, _layerHit);
-                    }
+                    _layerGotHit = true;
 
-                    return;
+                    break;
                 }
 
             }
+
             // Return background hit otherwise
-            _hit.distance = _distanceToBackground;
-            if (_layerHit != Layer.RaycastEndStop)
+            if (!_layerGotHit)
             {
-                _layerHit = Layer.RaycastEndStop;
-                OnLayerChange(Layer.RaycastEndStop);
+                _hit.distance = _distanceToBackground;
+
+                Ray ray = _viewCamera.ScreenPointToRay(Input.mousePosition);
+                _hit.point = ray.GetPoint(_distanceToBackground); // Create artificial ray hit
+
+                if (_layerHit != Layer.RaycastEndStop)
+                {
+                    _layerHit = Layer.RaycastEndStop;
+                    OnLayerChange(Layer.RaycastEndStop);
+                }
             }
+            _layerGotHit = false;
+
+            _timeSinceMouseDownStart += Time.deltaTime;
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnLeftClick.Invoke(_hit.point, _layerHit);
+            }
+            else if (Input.GetMouseButton(0) && _timeSinceMouseDownStart >= _mouseDownInterval)
+            {
+                OnLeftClick.Invoke(_hit.point, _layerHit);
+                _timeSinceMouseDownStart = 0f;
+            }
+
+            if (Input.GetMouseButton(1))
+            {
+                OnRightClick.Invoke(_hit.point, _layerHit);
+            }
+
+            if (Input.GetMouseButton(2))
+            {
+                OnScrollWheelClick.Invoke(_hit.point, _layerHit);
+            }
+
+            if (Input.GetAxis("Mouse ScrollWheel") != 0f)
+            {
+                OnScrollWheel.Invoke(Input.GetAxis("Mouse ScrollWheel"));
+            }
+
         }
     }
 
