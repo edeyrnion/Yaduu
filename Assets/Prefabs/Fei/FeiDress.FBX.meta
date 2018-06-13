@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e12c0e42bd3116e438ab8fa28dbc60ba
+guid: 7df3fa6a5cdb000408b176ddee537a3d
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -7,70 +7,81 @@ ModelImporter:
     100002: FeiBody
     100004: FeiCoat
     100006: FeiHead
-    100008: FeiHead1
-    100010: FeiHips
+    100008: FeiHips
+    100010: FeiJaw
     100012: FeiLeftArm
-    100014: FeiLeftFoot
-    100016: FeiLeftForeArm
-    100018: FeiLeftHand
-    100020: FeiLeftLeg
-    100022: FeiLeftShoulder
-    100024: FeiLeftToe1
-    100026: FeiLeftToe2
-    100028: FeiLeftUpLeg
-    100030: FeiNeck
-    100032: FeiRightArm
-    100034: FeiRightFoot
-    100036: FeiRightForeArm
-    100038: FeiRightHand
-    100040: FeiRightLeg
-    100042: FeiRightShoulder
-    100044: FeiRightToe1
-    100046: FeiRightToe2
-    100048: FeiRightUpLeg
-    100050: FeiSkeleton
-    100052: FeiSpine
-    100054: FeiSpine1
-    100056: FeiSpine2
+    100014: FeiLeftEye
+    100016: FeiLeftFoot
+    100018: FeiLeftForeArm
+    100020: FeiLeftHand
+    100022: FeiLeftLeg
+    100024: FeiLeftShoulder
+    100026: FeiLeftToe1
+    100028: FeiLeftToe2
+    100030: FeiLeftUpLeg
+    100032: FeiNeck
+    100034: FeiRightArm
+    100036: FeiRightEye
+    100038: FeiRightFoot
+    100040: FeiRightForeArm
+    100042: FeiRightHand
+    100044: FeiRightLeg
+    100046: FeiRightShoulder
+    100048: FeiRightToe1
+    100050: FeiRightToe2
+    100052: FeiRightUpLeg
+    100054: FeiSkeleton
+    100056: FeiSpine
+    100058: FeiSpine1
+    100060: FeiSpine2
     400000: //RootNode
     400002: FeiBody
     400004: FeiCoat
     400006: FeiHead
-    400008: FeiHead1
-    400010: FeiHips
+    400008: FeiHips
+    400010: FeiJaw
     400012: FeiLeftArm
-    400014: FeiLeftFoot
-    400016: FeiLeftForeArm
-    400018: FeiLeftHand
-    400020: FeiLeftLeg
-    400022: FeiLeftShoulder
-    400024: FeiLeftToe1
-    400026: FeiLeftToe2
-    400028: FeiLeftUpLeg
-    400030: FeiNeck
-    400032: FeiRightArm
-    400034: FeiRightFoot
-    400036: FeiRightForeArm
-    400038: FeiRightHand
-    400040: FeiRightLeg
-    400042: FeiRightShoulder
-    400044: FeiRightToe1
-    400046: FeiRightToe2
-    400048: FeiRightUpLeg
-    400050: FeiSkeleton
-    400052: FeiSpine
-    400054: FeiSpine1
-    400056: FeiSpine2
-    2100000: No Name
+    400014: FeiLeftEye
+    400016: FeiLeftFoot
+    400018: FeiLeftForeArm
+    400020: FeiLeftHand
+    400022: FeiLeftLeg
+    400024: FeiLeftShoulder
+    400026: FeiLeftToe1
+    400028: FeiLeftToe2
+    400030: FeiLeftUpLeg
+    400032: FeiNeck
+    400034: FeiRightArm
+    400036: FeiRightEye
+    400038: FeiRightFoot
+    400040: FeiRightForeArm
+    400042: FeiRightHand
+    400044: FeiRightLeg
+    400046: FeiRightShoulder
+    400048: FeiRightToe1
+    400050: FeiRightToe2
+    400052: FeiRightUpLeg
+    400054: FeiSkeleton
+    400056: FeiSpine
+    400058: FeiSpine1
+    400060: FeiSpine2
+    2100000: 'Material #37'
+    2100002: 'Material #36'
+    2100004: 'Material #35'
+    2100006: 'Material #38'
+    2100008: 'Material #39'
+    2100010: 'Material #52'
+    2100012: 'Material #51'
     4300000: FeiBody
     4300002: FeiCoat
     7400000: Take 001
     9500000: //RootNode
     13700000: FeiBody
     13700002: FeiCoat
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -193,6 +204,14 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
+    - boneName: FeiSpine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
     - boneName: FeiHead
       humanName: Head
       limit:
@@ -281,14 +300,6 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: FeiHead1
-      humanName: LeftEye
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: FeiSpine2
       humanName: UpperChest
       limit:
@@ -305,8 +316,24 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: FeiSpine1
-      humanName: Chest
+    - boneName: FeiLeftEye
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FeiRightEye
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FeiJaw
+      humanName: Jaw
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -314,150 +341,160 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Fei(Clone)
+    - name: FeiDress(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiBody
-      parentName: Fei(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+      parentName: FeiDress(Clone)
+      position: {x: -0.0000000014200529, y: -0.09509369, z: -0.023272851}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiCoat
-      parentName: Fei(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+      parentName: FeiDress(Clone)
+      position: {x: -0, y: -0.095089994, z: -0.023275828}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiSkeleton
-      parentName: Fei(Clone)
+      parentName: FeiDress(Clone)
       position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiHips
       parentName: FeiSkeleton
-      position: {x: 0.00000042162256, y: 0.8994131, z: -0.0123035805}
+      position: {x: 0.00000042162256, y: 0.86563194, z: -0.03302559}
       rotation: {x: -0.49999934, y: 0.49999934, z: -0.50000066, w: 0.50000066}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiSpine
       parentName: FeiHips
-      position: {x: -0.050897673, y: 0.00011813044, z: -0.000000026319903}
-      rotation: {x: -0.0000019364816, y: 0.0000006321464, z: 0.04322279, w: 0.99906546}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiSpine1
-      parentName: FeiSpine
-      position: {x: -0.1929544, y: 0.01906108, z: -0.00000039315194}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiSpine2
-      parentName: FeiSpine1
-      position: {x: -0.15632744, y: 0.05180927, z: -0.00000028637623}
-      rotation: {x: 5.32907e-15, y: -2.842171e-14, z: -0.0000000037252899, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiNeck
-      parentName: FeiSpine2
-      position: {x: -0.15671906, y: -0.010131073, z: -0.000000356425}
-      rotation: {x: 0, y: -0, z: -0.13052638, w: 0.9914448}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiLeftShoulder
-      parentName: FeiNeck
-      position: {x: 0.00002227783, y: -0.00006137848, z: -0.026027033}
-      rotation: {x: -0.5252612, y: -0.07067677, z: 0.84081066, w: -0.11019515}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiLeftArm
-      parentName: FeiLeftShoulder
-      position: {x: 0.10823345, y: 0.00918293, z: -0.107188106}
-      rotation: {x: 0.07133268, y: -0.39828402, z: 0.01488217, w: 0.91436327}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiLeftForeArm
-      parentName: FeiLeftArm
-      position: {x: 0.07102707, y: -0.037023883, z: -0.28115103}
-      rotation: {x: -0.03734579, y: 0.0039206734, z: 0.2180712, w: 0.9752102}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiLeftHand
-      parentName: FeiLeftForeArm
-      position: {x: 0.04801689, y: -0.01741623, z: -0.17599986}
-      rotation: {x: -0.70413613, y: -0.061654013, z: -0.061605062, w: 0.70469564}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiRightShoulder
-      parentName: FeiNeck
-      position: {x: 0.00002227783, y: -0.000061492916, z: 0.026027024}
-      rotation: {x: 0.5252696, y: 0.07067396, z: 0.8408054, w: -0.11019678}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiRightArm
-      parentName: FeiRightShoulder
-      position: {x: 0.10823532, y: 0.009182548, z: 0.10718559}
-      rotation: {x: -0.07133061, y: 0.3982874, z: 0.0148824025, w: 0.91436183}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiRightForeArm
-      parentName: FeiRightArm
-      position: {x: 0.0710318, y: -0.037024282, z: 0.28115258}
-      rotation: {x: 0.037345126, y: -0.0039104824, z: 0.21807261, w: 0.97520995}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiRightHand
-      parentName: FeiRightForeArm
-      position: {x: 0.048011396, y: -0.017415352, z: 0.17599864}
-      rotation: {x: 0.70413506, y: 0.06165397, z: -0.061604846, w: 0.7046967}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiHead
-      parentName: FeiNeck
-      position: {x: -0.08651505, y: -0.04935501, z: 0.000000051155947}
-      rotation: {x: 0, y: 0, z: 0.08755213, w: 0.99616}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FeiHead1
-      parentName: FeiHead
-      position: {x: -0.1756987, y: -0.011528247, z: 0.00000007910538}
-      rotation: {x: 0, y: -0, z: -5.684342e-14, w: 1}
+      position: {x: -0.044983063, y: 0.000118129254, z: -0.000000026061388}
+      rotation: {x: -0.0000020492112, y: 0.00000064094735, z: 0.04322274, w: 0.99906546}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiLeftUpLeg
       parentName: FeiSpine
-      position: {x: 0.056591414, y: -0.005024166, z: -0.10774515}
-      rotation: {x: 0.00985429, y: 0.9996559, z: -0.0031335696, w: 0.02410792}
+      position: {x: 0.044804763, y: -0.0040024184, z: -0.08519574}
+      rotation: {x: -0.018337602, y: 0.9995363, z: -0.0024524014, w: 0.024186788}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiLeftLeg
       parentName: FeiLeftUpLeg
-      position: {x: -0.34009933, y: -0.012260871, z: 0.033793353}
-      rotation: {x: 0, y: 0, z: 0.16876768, w: 0.9856559}
+      position: {x: -0.35265014, y: -0.047440156, z: 0.041417148}
+      rotation: {x: 0.004293878, y: -0.0002155527, z: 0.25518617, w: 0.9668824}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiLeftFoot
       parentName: FeiLeftLeg
-      position: {x: -0.35417384, y: 0.14479591, z: 0.03414235}
-      rotation: {x: -0.08430479, y: 0.035965044, z: -0.13311166, w: 0.9868539}
+      position: {x: -0.28233796, y: 0.17178069, z: 0.040321007}
+      rotation: {x: -0.08395705, y: 0.061621495, z: -0.43287408, w: 0.8954184}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiLeftToe1
       parentName: FeiLeftFoot
-      position: {x: -0.1107262, y: -0.07913815, z: -0.0036492252}
-      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      position: {x: -0.08551735, y: -0.106695004, z: -0.019067783}
+      rotation: {x: 0.008120657, y: -0.008120804, z: -0.6595052, w: 0.7516123}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiLeftToe2
       parentName: FeiLeftToe1
-      position: {x: 0.067315996, y: -0.021355726, z: -0.006604881}
-      rotation: {x: 1, y: 0, z: 0, w: -0.00000066579025}
+      position: {x: 0.0799897, y: 0, z: -0.009941511}
+      rotation: {x: 1, y: -5.843134e-23, z: 1.110223e-16, w: -0.00000066579025}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiRightUpLeg
       parentName: FeiSpine
-      position: {x: 0.056591034, y: -0.0050246236, z: 0.10773967}
-      rotation: {x: 0.009854089, y: 0.9996559, z: 0.0031362278, w: -0.024108125}
+      position: {x: 0.044804458, y: -0.004002838, z: 0.08519967}
+      rotation: {x: -0.018337533, y: 0.9995363, z: 0.0024551938, w: -0.024186976}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiRightLeg
       parentName: FeiRightUpLeg
-      position: {x: -0.34009907, y: -0.012260851, z: -0.033795238}
-      rotation: {x: 4.864709e-10, y: -2.947052e-11, z: 0.16876698, w: 0.985656}
+      position: {x: -0.35265037, y: -0.04744012, z: -0.04140883}
+      rotation: {x: -0.0042940634, y: 0.00021525686, z: 0.25518525, w: 0.96688265}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiRightFoot
       parentName: FeiRightLeg
-      position: {x: -0.354174, y: 0.14479528, z: -0.034144536}
-      rotation: {x: 0.08430424, y: -0.035964843, z: -0.13311061, w: 0.9868541}
+      position: {x: -0.28233817, y: 0.17178006, z: -0.040325135}
+      rotation: {x: 0.08395754, y: -0.061620533, z: -0.4328733, w: 0.8954188}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiRightToe1
       parentName: FeiRightFoot
-      position: {x: -0.11072616, y: -0.07913799, z: 0.003649931}
-      rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+      position: {x: -0.085517265, y: -0.1066954, z: 0.019065466}
+      rotation: {x: -0.008120578, y: 0.008120518, z: -0.6595051, w: 0.7516123}
       scale: {x: 1, y: 1, z: 1}
     - name: FeiRightToe2
       parentName: FeiRightToe1
-      position: {x: 0.06731763, y: -0.021355683, z: 0.006595621}
-      rotation: {x: 0, y: -2.7671586e-14, z: -0, w: 1}
+      position: {x: 0.07999031, y: 0.000000038146972, z: 0.009938049}
+      rotation: {x: -1.6724651e-16, y: 4.9321447e-33, z: -2.949027e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiSpine1
+      parentName: FeiSpine
+      position: {x: -0.14913948, y: -0.0026622484, z: -0.00000036836374}
+      rotation: {x: -1.0587912e-22, y: -7.34684e-40, z: 6.938894e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiSpine2
+      parentName: FeiSpine1
+      position: {x: -0.1269554, y: 0.022281742, z: -0.0000002830806}
+      rotation: {x: -1.0573861e-22, y: -5.4528255e-24, z: 0.05150048, w: 0.99867296}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiNeck
+      parentName: FeiSpine2
+      position: {x: -0.12697883, y: 0.022245731, z: -0.00000028316018}
+      rotation: {x: -7.318979e-17, y: 1.4170987e-17, z: -0.13052638, w: 0.9914448}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiLeftShoulder
+      parentName: FeiNeck
+      position: {x: 0.000022430419, y: -0.00006139755, z: -0.026027031}
+      rotation: {x: -0.48608938, y: -0.07222021, z: 0.8640734, w: -0.10898844}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiLeftArm
+      parentName: FeiLeftShoulder
+      position: {x: 0.08180637, y: 0.0093003465, z: -0.09634666}
+      rotation: {x: 0.07365288, y: -0.29658735, z: -0.03766475, w: 0.9514161}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiLeftForeArm
+      parentName: FeiLeftArm
+      position: {x: 0.087944336, y: -0.014121809, z: -0.22941947}
+      rotation: {x: -0.1467658, y: -0.020984026, z: 0.113247894, w: 0.9824431}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiLeftHand
+      parentName: FeiLeftForeArm
+      position: {x: 0.0752362, y: 0.042677496, z: -0.18484737}
+      rotation: {x: -0.7041362, y: -0.061654028, z: -0.061605085, w: 0.7046956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiRightShoulder
+      parentName: FeiNeck
+      position: {x: 0.000022430419, y: -0.00006152153, z: 0.026027026}
+      rotation: {x: 0.4860911, y: 0.07221766, z: 0.86407256, w: -0.10898971}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiRightArm
+      parentName: FeiRightShoulder
+      position: {x: 0.081806906, y: 0.00930027, z: 0.096346125}
+      rotation: {x: -0.07409463, y: 0.2970408, z: -0.036630638, w: 0.9512807}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiRightForeArm
+      parentName: FeiRightArm
+      position: {x: 0.08794525, y: -0.014121913, z: 0.22941917}
+      rotation: {x: 0.15292418, y: -0.00007981061, z: 0.107988924, w: 0.98232}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiRightHand
+      parentName: FeiRightForeArm
+      position: {x: 0.082881466, y: 0.04313835, z: 0.17530113}
+      rotation: {x: 0.7063967, y: 0.10134648, z: -0.12933359, w: 0.68848056}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiHead
+      parentName: FeiNeck
+      position: {x: -0.09064987, y: -0.04112213, z: 0.00000005897513}
+      rotation: {x: 1.0960338e-19, y: -1.7155569e-17, z: 0.015355527, w: 0.9998821}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiJaw
+      parentName: FeiHead
+      position: {x: 0.0041955565, y: -0.077662095, z: -0.0000001013554}
+      rotation: {x: -0.49673733, y: 0.5032417, z: 0.50324214, w: -0.49673653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiLeftEye
+      parentName: FeiHead
+      position: {x: -0.08176575, y: -0.058895025, z: -0.027851813}
+      rotation: {x: -0.5, y: 0.5, z: 0.5000007, w: -0.49999928}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FeiRightEye
+      parentName: FeiHead
+      position: {x: -0.0817395, y: -0.05880309, z: 0.027845075}
+      rotation: {x: -0.5, y: 0.5, z: 0.5000007, w: -0.49999928}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
