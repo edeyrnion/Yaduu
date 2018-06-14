@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c55084570557c7c4abea3222ed5a4d62, type: 3}
-  m_Name: Bar
+  m_Name: Hammer
   m_EditorClassIdentifier: 
-  itemName: Bar
+  itemName: Hammer
   itemType: 1
-  itemAmount: 10
+  itemAmount: 15
   itemMaterial: {fileID: 2100000, guid: e2ae7eb9697cf5b48bdd291306e0c94c, type: 2}
-  itemSpawnObject: {fileID: 54490300458204418, guid: ab3af6c970384ae449b1090ef291f696,
+  itemSpawnObject: {fileID: 54254335503166244, guid: 8919c1767123a1d499ae7736ef2ba182,
     type: 2}
-  weaponSlotObject: {fileID: 54490300458204418, guid: ab3af6c970384ae449b1090ef291f696,
+  weaponSlotObject: {fileID: 54254335503166244, guid: f9b004aaa133605489e471c1b956329f,
     type: 2}

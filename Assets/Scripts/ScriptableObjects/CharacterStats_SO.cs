@@ -53,6 +53,7 @@ public class CharacterStats_SO : ScriptableObject
             if (Weapon == weaponPickUp)
             {
                 previousWeaponSame = true;
+                return previousWeaponSame;
             }
             Destroy(weaponSlot.transform.GetChild(0).gameObject);
             Weapon = null;

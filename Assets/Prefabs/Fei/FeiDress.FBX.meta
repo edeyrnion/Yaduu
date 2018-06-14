@@ -34,6 +34,8 @@ ModelImporter:
     100056: FeiSpine
     100058: FeiSpine1
     100060: FeiSpine2
+    100062: Body
+    100064: Coat
     400000: //RootNode
     400002: FeiBody
     400004: FeiCoat
@@ -65,6 +67,8 @@ ModelImporter:
     400056: FeiSpine
     400058: FeiSpine1
     400060: FeiSpine2
+    400062: Body
+    400064: Coat
     2100000: 'Material #37'
     2100002: 'Material #36'
     2100004: 'Material #35'
@@ -74,10 +78,14 @@ ModelImporter:
     2100012: 'Material #51'
     4300000: FeiBody
     4300002: FeiCoat
+    4300004: Body
+    4300006: Coat
     7400000: Take 001
     9500000: //RootNode
     13700000: FeiBody
     13700002: FeiCoat
+    13700004: Body
+    13700006: Coat
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
