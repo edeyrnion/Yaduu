@@ -5,15 +5,26 @@ public class CharacterStats_SO : ScriptableObject
 {
     [SerializeField] public bool SetManually = false;
 
-    [SerializeField] public int MaxHealth = 0;
-    [SerializeField] public int CurrentHealth = 0;
+    [SerializeField] public bool IsPlayer = false;
 
-    [SerializeField] public int BaseDamage = 0;
-    [SerializeField] public int CurrentDamage = 0;
+    [SerializeField] public float MaxHealth = 100f;
+    [SerializeField] public float CurrentHealth = 100f;
+
+    [SerializeField] public float BaseDamage = 1f;
+    [SerializeField] public float CurrentDamage = 1f;
+
+    [SerializeField] public float BaseResistance = 0f;
+    [SerializeField] public float CurrentResistance = 0f;
+
+    [SerializeField] public float BaseRange = 2f;
+    [SerializeField] public float CurrentRange = 2f;
+
+    [SerializeField] public float BaseAttackSpeed = 1f;
+    [SerializeField] public float CurrentAttackSpeed = 1f;
 
     public ItemPickUp Weapon { get; private set; }
 
-    public void ApplyHealth(int healthAmount)
+    public void ApplyHealth(float healthAmount)
     {
         if ((CurrentHealth + healthAmount) > MaxHealth)
         {
@@ -25,13 +36,13 @@ public class CharacterStats_SO : ScriptableObject
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount, GameObject gameObject)
     {
         CurrentHealth -= amount;
 
         if (CurrentHealth <= 0)
         {
-            Death();
+            Death(gameObject);
         }
     }
 
@@ -40,14 +51,13 @@ public class CharacterStats_SO : ScriptableObject
         Rigidbody newWeapon;
 
         Weapon = weaponPickUp;
-        newWeapon = Instantiate(weaponPickUp.itemDefinition.weaponSlotObject, weaponSlot.transform);
-        CurrentDamage = BaseDamage + Weapon.itemDefinition.itemAmount;
+        newWeapon = Instantiate(weaponPickUp.ItemDefinition.weaponSlotObject, weaponSlot.transform);
+        CurrentDamage = BaseDamage + Weapon.ItemDefinition.itemAmount;
     }
     
     public bool UnEquipWeapon(ItemPickUp weaponPickUp, GameObject weaponSlot)
     {
         bool previousWeaponSame = false;
-
         if (Weapon != null)
         {
             if (Weapon == weaponPickUp)
@@ -63,10 +73,15 @@ public class CharacterStats_SO : ScriptableObject
         return previousWeaponSame;
     }
 
-    private void Death()
+    private void Death(GameObject gameObject)
     {
-        Debug.Log("YOU DIED");
-        //Call to Game Manager for Death State to trigger respawn
-        //Dispaly the Death visualization
+        if (IsPlayer)
+        {
+            GameManager.Instance.RestartGame();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

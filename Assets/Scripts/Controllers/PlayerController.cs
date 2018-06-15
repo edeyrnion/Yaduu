@@ -1,24 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     Animator _animator;
     NavMeshAgent _navMeshAgent;
+    CharacterStats _stats;
+
+    private GameObject attackTarget;
 
     private bool _isMouseMovement = true;
 
     private void Start()
     {
         MouseManager.Instance.OnLeftClick.AddListener(HandleClickEnvironment);
+        MouseManager.Instance.OnClickUseable.AddListener(InteractWithTarget);
+
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _stats = GetComponent<CharacterStats>();
     }
 
     private void Update()
     {
         _animator.SetFloat("Speed", _navMeshAgent.velocity.magnitude);
-        
+
         if (!_isMouseMovement)
         {
             ProcessDirectMovement();
@@ -29,6 +36,8 @@ public class PlayerController : MonoBehaviour
     {
         if (layer == Layer.Walkable)
         {
+            StopAllCoroutines();
+            _navMeshAgent.isStopped = false;
             _navMeshAgent.destination = target;
         }
     }
@@ -45,6 +54,68 @@ public class PlayerController : MonoBehaviour
         _navMeshAgent.velocity = move * _navMeshAgent.speed;
     }
 
+    public void InteractWithTarget(GameObject target, Layer layer)
+    {
+        if (layer == Layer.Enemy)
+        {
+            StopAllCoroutines();
+
+            _navMeshAgent.isStopped = false;
+            attackTarget = target;
+            StartCoroutine(PursueAttackTarget());
+        }
+    }
+
+    private IEnumerator PursueAttackTarget()
+    {
+        _navMeshAgent.isStopped = false;
+        var weapon = _stats.GetCurrentWeapon();
+
+        while (Vector3.Distance(transform.position, attackTarget.transform.position) > _stats.GetRange())
+        {
+            _navMeshAgent.destination = attackTarget.transform.position;
+            yield return null;
+        }
+
+        _navMeshAgent.isStopped = true;
+
+        transform.LookAt(attackTarget.transform);
+        _animator.SetTrigger("Attack");
+    }
+
+    public void Hit()
+    {
+        if (attackTarget != null)
+        {
+            ExecuteAttack(gameObject, attackTarget);
+        }
+    }
+
+    public void ExecuteAttack(GameObject attacker, GameObject defender)
+    {
+        if (defender == null)
+        {
+            return;
+        }
+
+        if (Vector3.Distance(attacker.transform.position, defender.transform.position) > _stats.GetRange())
+        {
+            return;
+        }
+
+        if (!attacker.transform.IsFacingTarget(defender.transform))
+        {
+            return;
+        }
+
+        var defenderStats = defender.GetComponent<CharacterStats>();
+        if (defenderStats != null)
+        {
+            var attack = _stats.GetDamage();
+            attack *= defenderStats.GetResistance();
+            defenderStats.TakeDamage(attack);
+        }
+    }
 }
 
 

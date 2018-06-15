@@ -12,11 +12,7 @@ public class MouseManager : Singleton<MouseManager>
     private float _timeSinceMouseDownStart;
     private float _mouseDownInterval = 0.1f;
 
-    public Layer[] LayerPriorities =
-{
-        Layer.Enemy,
-        Layer.Walkable
-    };
+    private Layer[] LayerPriorities = { Layer.Enemy, Layer.Item, Layer.Walkable };
 
     private bool _layerGotHit;
     private float _distanceToBackground = 50f;
@@ -38,10 +34,14 @@ public class MouseManager : Singleton<MouseManager>
     public Events.EventOnClick OnRightClick;
     public Events.EventOnClick OnScrollWheelClick;
     public Events.EventOnScroll OnScrollWheel;
+    public Events.EventGameObject OnClickUseable;
 
     private void Start()
     {
-        GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
+        }
         Cursor.SetCursor(_pointerCurser, _pointerCurserHotspot, CursorMode.Auto);
     }
 
@@ -67,7 +67,6 @@ public class MouseManager : Singleton<MouseManager>
 
                     break;
                 }
-
             }
 
             // Return background hit otherwise
@@ -89,12 +88,28 @@ public class MouseManager : Singleton<MouseManager>
             _timeSinceMouseDownStart += Time.deltaTime;
             if (Input.GetMouseButtonDown(0))
             {
-                OnLeftClick.Invoke(_hit.point, _layerHit);
+                if (_layerHit == Layer.Enemy || _layerHit == Layer.Item)
+                {
+                    GameObject useable = _hit.collider.gameObject;
+                    OnClickUseable.Invoke(useable, _layerHit);
+                }
+                else
+                {
+                    OnLeftClick.Invoke(_hit.point, _layerHit);
+                }
             }
             else if (Input.GetMouseButton(0) && _timeSinceMouseDownStart >= _mouseDownInterval)
             {
-                OnLeftClick.Invoke(_hit.point, _layerHit);
-                _timeSinceMouseDownStart = 0f;
+                if (_layerHit == Layer.Enemy || _layerHit == Layer.Item)
+                {
+                    GameObject useable = _hit.collider.gameObject;
+                    OnClickUseable.Invoke(useable, _layerHit);
+                }
+                else
+                {
+                    OnLeftClick.Invoke(_hit.point, _layerHit);
+                    _timeSinceMouseDownStart = 0f;
+                }
             }
 
             if (Input.GetMouseButton(1))
@@ -138,6 +153,9 @@ public class MouseManager : Singleton<MouseManager>
                 break;
             case Layer.Enemy:
                 Cursor.SetCursor(_targetCurser, _targetCurserHotspot, CursorMode.Auto);
+                break;
+            case Layer.Item:
+                Cursor.SetCursor(_pointerCurser, _pointerCurserHotspot, CursorMode.Auto);
                 break;
             case Layer.RaycastEndStop:
                 Cursor.SetCursor(_pointerCurser, _pointerCurserHotspot, CursorMode.Auto);

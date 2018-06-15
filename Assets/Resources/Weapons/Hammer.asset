@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 1
   itemAmount: 15
   itemMaterial: {fileID: 2100000, guid: e2ae7eb9697cf5b48bdd291306e0c94c, type: 2}
-  itemSpawnObject: {fileID: 54254335503166244, guid: 8919c1767123a1d499ae7736ef2ba182,
+  itemSpawnObject: {fileID: 54200915573801924, guid: 2c314d25176aec74f8cffee44083493c,
     type: 2}
-  weaponSlotObject: {fileID: 54254335503166244, guid: f9b004aaa133605489e471c1b956329f,
+  weaponSlotObject: {fileID: 54200915573801924, guid: 6da227f4f44afd14bbdad571f9a17088,
     type: 2}

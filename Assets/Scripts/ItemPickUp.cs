@@ -2,15 +2,16 @@
 
 public class ItemPickUp : MonoBehaviour
 {
-    public ItemPickUps_SO itemDefinition;
+    public ItemPickUps_SO ItemDefinition;
 
     private GameObject _player;
-    private CharacterStats charStats;
+    private CharacterStats _charStats;
+    private Rigidbody _item;
 
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        charStats = _player.GetComponent<CharacterStats>();
+        _charStats = _player.GetComponent<CharacterStats>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,13 +24,13 @@ public class ItemPickUp : MonoBehaviour
 
     public void UseItem()
     {
-        switch (itemDefinition.itemType)
+        switch (ItemDefinition.itemType)
         {
             case ItemTypeDefinitions.HEALTH:
-                charStats.ApplyHealth(itemDefinition.itemAmount);
+                _charStats.ApplyHealth(ItemDefinition.itemAmount);
                 break;
             case ItemTypeDefinitions.WEAPON:
-                charStats.ChangeWeapon(this);
+                _charStats.ChangeWeapon(this);
                 break;
         }
     }
