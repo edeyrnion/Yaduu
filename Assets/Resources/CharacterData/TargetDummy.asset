@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a62f4b3369c6c24094607cc7bb9d792, type: 3}
+  m_Name: TargetDummy
+  m_EditorClassIdentifier: 
+  SetManually: 0
+  IsPlayer: 0
+  MaxHealth: 100
+  CurrentHealth: 89
+  BaseDamage: 1
+  CurrentDamage: 1
+  BaseResistance: 0
+  CurrentResistance: 0
+  BaseRange: 2
+  CurrentRange: 2
+  BaseAttackSpeed: 1
+  CurrentAttackSpeed: 1

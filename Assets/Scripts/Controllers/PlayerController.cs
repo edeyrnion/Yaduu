@@ -100,15 +100,18 @@ public class PlayerController : MonoBehaviour
 
         if (Vector3.Distance(attacker.transform.position, defender.transform.position) > _stats.GetRange())
         {
-            return;
+            //return;
         }
 
         if (!attacker.transform.IsFacingTarget(defender.transform))
         {
-            return;
+            //return;
         }
 
         var defenderStats = defender.GetComponent<CharacterStats>();
+
+        Debug.Log("ExecuteAttack on " + defenderStats);
+
         if (defenderStats != null)
         {
             var attack = _stats.GetDamage();

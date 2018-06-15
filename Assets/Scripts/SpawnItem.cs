@@ -31,4 +31,10 @@ public class SpawnItem : MonoBehaviour, ISpawns
         ItemType = ItemSpawned.GetComponent<ItemPickUp>();
         ItemType.ItemDefinition = ip;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(transform.position, 0.5f);
+    }
 }

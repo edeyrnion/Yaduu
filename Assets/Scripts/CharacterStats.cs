@@ -36,7 +36,7 @@ public class CharacterStats : MonoBehaviour
     public void TakeDamage(float amount)
     {
         CharacterDefinition.TakeDamage(amount, gameObject);
-        Debug.Log(CharacterDefinition.name + GetHealth());
+        Debug.Log(CharacterDefinition.name + " Health: " + GetHealth());
     }
 
     public void ChangeWeapon(ItemPickUp weaponPickUp)
